@@ -24,6 +24,7 @@ namespace LibraryManagementSystem
 
             var app = builder.Build();
 
+            PrepDb.PrepPopulation(app);
 
             if (app.Environment.IsDevelopment())
             {
@@ -35,7 +36,7 @@ namespace LibraryManagementSystem
 
             app.UseAuthorization();
 
-
+     
             app.MapControllers();
 
             app.Run();
