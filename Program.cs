@@ -1,4 +1,7 @@
 
+using LibraryManagementSystem.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace LibraryManagementSystem
 {
     public class Program
@@ -14,9 +17,13 @@ namespace LibraryManagementSystem
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddDbContext<AppDbContext>(opt => 
+            opt.UseInMemoryDatabase("InMem"));
+
+
             var app = builder.Build();
 
-        
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
