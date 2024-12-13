@@ -20,6 +20,7 @@ namespace LibraryManagementSystem
             builder.Services.AddDbContext<AppDbContext>(opt => 
             opt.UseInMemoryDatabase("InMem"));
 
+            builder.Services.AddScoped<IBookRepository,  BookRepository>();
 
             var app = builder.Build();
 
