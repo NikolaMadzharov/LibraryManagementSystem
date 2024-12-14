@@ -17,6 +17,8 @@ namespace LibraryManagementSystem
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             builder.Services.AddDbContext<AppDbContext>(opt => 
             opt.UseInMemoryDatabase("InMem"));
 
@@ -36,6 +38,7 @@ namespace LibraryManagementSystem
 
             app.UseAuthorization();
 
+            
      
             app.MapControllers();
 

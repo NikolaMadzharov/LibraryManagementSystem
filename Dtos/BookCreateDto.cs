@@ -2,7 +2,7 @@
 
 namespace LibraryManagementSystem.Dtos
 {
-    public class BookCreateDtoClass
+    public class BookCreateDto
     {
 
         [Required]
