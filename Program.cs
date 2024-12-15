@@ -28,11 +28,10 @@ namespace LibraryManagementSystem
 
             PrepDb.PrepPopulation(app);
 
-            if (app.Environment.IsDevelopment())
-            {
+            
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+            
 
             app.UseHttpsRedirection();
 
