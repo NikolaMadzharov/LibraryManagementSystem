@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: booknpservice-srv
+spec:
+  type: NodePort
+  selector:
+    app: bookservice
+  ports:
+    - name: bookservice
+      protocol: TCP
+      port: 5034  
+      targetPort: 5034  

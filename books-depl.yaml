@@ -1,0 +1,17 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: books-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookservice
+  template:
+    metadata:
+      labels: 
+        app: bookservice
+    spec:
+      containers:
+        - name: bookservice
+          image: nmadzharov1912/bookservice:latest
