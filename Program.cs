@@ -1,5 +1,6 @@
 
 using LibraryManagementSystem.Data;
+using LibraryManagementSystem.SyncDataService.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementSystem
@@ -23,6 +24,8 @@ namespace LibraryManagementSystem
             opt.UseInMemoryDatabase("InMem"));
 
             builder.Services.AddScoped<IBookRepository,  BookRepository>();
+            builder.Services.AddHttpClient<ICommandDataClient, HttpCBookDataClient>();
+            Console.WriteLine($"--> CommandService Endpoints {builder.Configuration["CommandService"]}");
 
             var app = builder.Build();
 
@@ -33,7 +36,7 @@ namespace LibraryManagementSystem
                 app.UseSwaggerUI();
             
 
-            app.UseHttpsRedirection();
+           app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
